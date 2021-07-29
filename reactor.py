@@ -26,3 +26,4 @@ class Reactor(object):
                 except InvalidReadable:
                     log.info('client with fd {} closed connection'.format(ready_readable.fileno()))
                     self.readables.pop(ready_readable)
+                    ready_readable.close()
